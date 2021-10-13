@@ -1,0 +1,26 @@
+extends layout 
+block content 
+    .container_add
+        form(action="/account/add" method="POST" enctype="multipart/form-data")
+            .mb-3
+                label.form-label(for='name') Mahsulot nomi
+                input.form-control#name(name="name" type='text' placeholder="Mahsulot nomi" required)
+            .mb-3
+                label.form-label(for='exampleInputPassword1') Mahsulot narxi
+                input.form-control#exampleInputPassword1(name="price" type='number' placeholder="Mahsulot narxi" required)
+            .mb-3
+                label.form-label(for='exampleInputEmail1') Turi
+                select#exampleInputEmail1(name="select").form-select
+                    option(value="car") Mashina  
+                    option(value="animal") Hayvon
+                    option(value="home") Uy uchun
+                    option(value="car") Bolalar uchun  
+                    option(value="technology") Elektor jihozlar
+                    option(value="sport") Sport 
+            .mb-3
+                label.form-label(for='img') Mahsulot rasmi
+                input.form-control#img(name="img" type='file' placeholder="Mahsulot rasmi" required)
+            .mb-3
+                label.form-label(for='more') Mahsulot haqida
+                textarea#more(name="textarea", cols="100", rows="10" required).form-control
+            button.btn.btn-primary(type='submit') Joylash

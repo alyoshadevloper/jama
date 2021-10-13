@@ -1,0 +1,28 @@
+extends layout 
+block content 
+    .more_container.container.pt-5
+        .card_more
+            img.card-img-top.more_img(src="/images/" + db.img alt='')#zoom
+            .card_body_more.col-lg-6
+                h5.card-title= db.name 
+                p.card-text.card_price= db.price + " so'm"
+                .divv.d-flex.align-items-center
+                    p.card-text Mahsulot turi :
+                    p.card-text.card_select= db.select 
+                .haqida_product
+                    p.card-text Mahsulot haqida :                   
+                    p.card-text= db.textarea
+                if user
+                    if user.id == db.dirUser
+                        .btn_delete_update
+                            a.btn.btn-primary(href='/account/product_delete/' + db.id) Delete
+                            a.btn.btn-primary(href='/account/product_update/' + db.id) Update
+        .card_right
+            p.foydalanuvchi Foydalanuvchi
+            .user_name_and_img 
+                img(src="https://cdn-icons-png.flaticon.com/512/149/149071.png", alt="")
+                p.card-text= db.UserName
+            a(href="tel:" + db.Phone_number ).btn.btn-primary Qo'ng'iroq qilish
+    script(src='/jquery.elevateZoom-3.0.8.min.js')
+    script.
+        $("#zoom").elevateZoom();

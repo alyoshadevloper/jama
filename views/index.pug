@@ -1,0 +1,18 @@
+extends layout 
+block content
+    .container
+        .row.m-0.pt-5.row_index
+            .col-lg-7
+                .input-group.mb-3.pt-3
+                    input.form-control(type='text' placeholder='Search' aria-label='Search' aria-describedby='basic-addon1' class="search_input")
+                    span.input-group-text#basic-addon1 
+                        i.fas.fa-search
+            .col-lg-12
+                .row
+                    each product in db 
+                        .card(style='width: 18rem;').big_div
+                            img.card-img-top(src="images/" + product.img alt='...')
+                            .card-body
+                                h5.card-title.text_title= product.name
+                                p.card-text= product.price + " so'm"
+                                a.btn.btn-primary(href='/account/product_more/' + product.id) More

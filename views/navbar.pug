@@ -1,0 +1,11 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container
+    a.navbar-brand(href='/') Online
+    .collapse.navbar-collapse.justify-content-end
+      ul.navbar-nav
+            if !user
+              li.nav-item
+                 a.nav-link(href="/registor" aria-current='page') Ro'yxatdan o'tish
+            if user
+              li.nav-item
+                  a.nav-link(href="/account" aria-current='page') Account 

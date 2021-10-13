@@ -1,0 +1,38 @@
+extends layout 
+block content 
+    .container.container_update
+        form(action="/account/product_update/" + db.id method="POST" enctype="multipart/form-data")
+            .mb-3
+                label.form-label(for='name') Mahsulot nomi
+                if db 
+                    input.form-control#name(name="name" type='text' value=db.name placeholder="Mahsulot nomi" required)
+                else
+                    input.form-control#name(name="name" type='text' placeholder="Mahsulot nomi" required)
+            .mb-3
+                label.form-label(for='exampleInputPassword1') Mahsulot narxi
+                if db 
+                    input.form-control#exampleInputPassword1(name="price" type='number' value=db.price placeholder="Mahsulot narxi" required)
+                else
+                    input.form-control#exampleInputPassword1(name="price" type='number' placeholder="Mahsulot narxi" required)
+            .mb-3
+                label.form-label(for='exampleInputEmail1') Turi
+                select#exampleInputEmail1(name="select").form-select
+                    option(value="car") Mashina  
+                    option(value="animal") Hayvon
+                    option(value="home") Uy uchun
+                    option(value="car") Bolalar uchun  
+                    option(value="technology") Elektor jihozlar
+                    option(value="sport") Sport 
+            .mb-3
+                label.form-label(for='img') Mahsulot rasmi
+                if db
+                    input.form-control#img(name="img" type='file' value= db.img placeholder="Mahsulot rasmi" required)
+                else
+                    input.form-control#img(name="img" type='file' placeholder="Mahsulot rasmi" required)
+            .mb-3
+                label.form-label(for='more') Mahsulot haqida
+                if db
+                    textarea#more(name="textarea", cols="100", rows="10" required).form-control.value= db.textarea
+                else 
+                    textarea#more(name="textarea", cols="100", rows="10" required).form-control
+            button.btn.btn-primary(type='submit') O'zgartirish

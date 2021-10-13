@@ -1,0 +1,19 @@
+extends layout
+block content
+    body.registor_body
+        .col-lg-3.col-xl-2.registor_col_2   
+            .aaaaaaaaaaaaaaaa 
+            .aaaaaaaaaaaaaaab 
+            h2 User Login
+            form(action="/registor" method="POST")
+                .input_btn
+                    .btn(for="username")
+                        i.fas.fa-user
+                    input#username(type="email", name="login" placeholder="Your login").registor_input
+                .input_btn
+                    .btn(for="password")
+                        i.fas.fa-lock
+                    input#password(type="password", name="password" placeholder="Password").registor_input
+                button.form_submit Login
+            a(href="/registor/createAccount").create_account Create Your Account  
+                i.fas.fa-long-arrow-alt-right

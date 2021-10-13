@@ -1,0 +1,28 @@
+extends layout 
+block content 
+        .container_account
+            .col-lg-3.account_left
+                .container_item
+                    .account_name 
+                        .img_Account 
+                            img(src="https://image.shutterstock.com/image-vector/account-icon-vector-design-template-260nw-1627077943.jpg", alt="")
+                        .accountname 
+                            h4= user.your_name
+                    .add_product 
+                        a(href="/account/add") Mahsulot qo'shish 
+                    .logout 
+                        a(href="/account/logout") Chiqish 
+                           i.fas.fa-sign-out-alt
+            .col-lg-9.prod_right
+                .row.m-0.pt-3
+                    if user 
+                        each product in db 
+                            if user.id == product.dirUser
+                                .card(style='width: 18rem;')
+                                    img.card-img-top(src="images/" + product.img alt='...')
+                                    .card-body
+                                        h5.card-title= product.name
+                                        p.card-text= product.price + " so'm"
+                                        a.btn.btn-primary(href='/account/product_delete/' + product.id) Delete
+                                        a.btn.btn-primary(href='/account/product_update/' + product.id) Update
+                                        a.btn.btn-primary(href='/account/product_more/' + product.id) More

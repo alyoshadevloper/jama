@@ -1,0 +1,15 @@
+extends layout 
+block content 
+    .card-body.login-card-body
+        form(action='/admin' method='POST')
+            .input-group.mb-3
+                input.form-control(type='email' placeholder='Email')
+                .input-group-append
+                    .input-group-text
+                        span.fas.fa-envelope
+            .input-group.mb-3
+                input.form-control(type='password' placeholder='password')
+                .input-group-append
+                    .input-group-text
+                        span.fas.fa-lock
+            button.btn.btn-warning Submit 

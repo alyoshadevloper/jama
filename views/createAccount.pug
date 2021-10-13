@@ -1,0 +1,13 @@
+extends layout 
+block content
+    .create_body
+        .col-lg-3.registor_col_3   
+            h2 Create Account
+            form(action="/registor/createAccount" method="POST" )
+                input(type="text", name="your_name" placeholder="Your name")
+                input(type="email", name="login" placeholder="Your login")
+                input(type="password", name="password" placeholder="Password")
+                input(type="password", name="password2" placeholder="Parolni qaytadan yozing")
+                input(type="number", name="phone" placeholder="Phone")
+                .buttons
+                    button.form_submit_create Submit
